@@ -1,0 +1,136 @@
+body {
+  font-size: 16px;
+  color: #fff;
+  background-color:  #ff8c1a;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/** HEADER **/
+#header-nav {
+  background-color: #f6b319;
+  border-radius: 0;
+  border: 0;
+}
+
+/*#logo-img {
+  background: url('../images/restaurant-logo_large.png') no-repeat;
+  width: 150px;
+  height: 150px;
+  margin: 10px 15px 10px 0;
+}*/
+
+.navbar-brand {
+  padding-top: 25px;
+}
+
+.navbar-brand h1 { /* Restaurant name */
+  font-family: 'Kumar One', cursive;
+  color:#cc6600;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .75;
+}
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+
+#nav-list {
+  margin-top: 10px; 
+}
+#nav-list a {
+  color: #951C49;
+  text-align: center;
+}
+#nav-list a:hover {
+  background: #E7E7E7;
+}
+#nav-list a span {
+  font-size: 1.8em;
+}
+
+
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid #61122f;
+}
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-top: -30px;
+}
+
+#collapsable-nav {
+  background-color: #ff6633
+  visible: small;
+}
+
+/* END HEADER */
+
+/*BODY*/
+
+h2 {
+  font-weight: bold;
+  font-size: 2em;
+}
+#menu-categories {
+  width: 90%;
+  text-align: justify;
+  padding: 20px 0px 0px 20px;
+}
+
+section {
+  padding-left: 20px ;
+  padding-right: 20px;
+}
+h3 {
+
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.section-image {
+  /*background: url('../images/restaurant-logo_large.png') no-repeat;*/
+  width: 50px;
+  height: 50px;
+  }
+
+#Umngqusho {
+  height: 1000px;
+  background-color:#ff9966;
+  
+}
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+
+
+
+#menu-categories {
+  width: 100%;
+}
+
+
+}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+
+/*#menu-categories {*/
+  /*width: 100%;*/
+}
+
+}
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Header */
+
+
+/*END OF HEADER*/
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {}
+
+
