@@ -1,24 +1,24 @@
 // STEP 2: Wrap the entire contents of SpeakHello.js inside of an IIFE
 // See Lecture 52, part 2
 
-(function () {
-	var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
-	console.log(names);
-}) ();
+// (function () {
+// 	var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+// 	console.log(names);
+// }) ();
 
 
 // STEP 3: Create an object, called 'helloSpeaker' to which you will attach
 // the "speak" method and which you will expose to the global context
 // See Lecture 52, part 1
-(function () {
-	var helloSpeaker = {}
-	helloSpeaker.names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
-	console.log(helloSpeaker.names)
-}) ();
+// (function () {
+// 	var helloSpeaker = {}
+// 	helloSpeaker.names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+// 	console.log(helloSpeaker.names)
+// // }) ();
 	
 	
 // DO NOT attach the speakWord variable to the 'helloSpeaker' object.
-var speakWord = "Hello";
+// var speakWord = "Hello";
 
 // STEP 4: Rewrite the 'speak' function such that it is attached to the
 // helloSpeaker object instead of being a standalone function.
@@ -26,14 +26,14 @@ var speakWord = "Hello";
 // function speak(name) {
 //   console.log(speakWord + " " + name);
 // }
-function speak(name) {
-	var helloSpeaker = {}
-	helloSpeaker.names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
-	var speakWord = "Hello";
-	helloSpeaker.SpeakHello = function () {
-	console.log(speakWord + " " + helloSpeaker.names);
-	}
-} speak(name);
+// function speak(name) {
+// 	var helloSpeaker = {}
+// 	helloSpeaker.names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+// 	var speakWord = "Hello";
+// 	helloSpeaker.SpeakHello = function () {
+// 	console.log(speakWord + " " + helloSpeaker.names);
+// 	}
+// } speak(name);
 
 // STEP 5: Expose the 'helloSpeaker' object to the global scope. Name it
 // 'helloSpeaker' on the global scope as well.
@@ -42,10 +42,10 @@ function speak(name) {
 // xxxx.xxxx = helloSpeaker;
 (function (window) {
 	var helloSpeaker = {}
-	helloSpeaker.names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+	// helloSpeaker.names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
 	var speakWord = "Hello";
-	helloSpeaker.SpeakHello = function () {
-	console.log(speakWord + " " + helloSpeaker.names);
+	helloSpeaker.SpeakHello = function (name) {
+	console.log(speakWord + " " + name);
 	}
 
 	window.helloSpeaker = helloSpeaker;
