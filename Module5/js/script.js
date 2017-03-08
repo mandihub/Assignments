@@ -104,9 +104,16 @@ function buildAndShowHomeHTML (categories) {
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
-      // var chosenCategoryShortName = ....
-
-
+      $ajaxUtils.sendGetRequest(
+        chooseRandomCategory,
+        function (categoryShort) {
+          var chosenCategoryShortName = buildCategoriesViewHtml(categories,
+                                                            categoriesTitleHtml,
+                                                            categoryHtml);
+                                    insertHtml("#main-content", categoriesViewHtml);
+                                  },
+                                  false);
+                                  
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
       // chosen category from STEP 2. Use existing insertProperty function for that purpose.
       // Look through this code for an example of how to do use the insertProperty function.
@@ -118,13 +125,45 @@ function buildAndShowHomeHTML (categories) {
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
       //
-      // var homeHtmlToInsertIntoMainPage = ....
+      function buildMenuItemsViewHtml(categoryMenuItems,
+                                      menuItemsTitleHtml,
+                                      menuItemHtml) {
 
+        homeSnippetHtml = 
+          insertProperty(homeSnippetHtml,
+                          "name",
+                          categoryMenuItems.category.name)
+       var homeHtmlToInsertIntoMainPage = homeSnippetHtml
+ 
+      }
+      
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
       // ....
+function buildAndShowMenuItemsHTML (categoryMenuItems) {
+  // Load title snippet of menu items page
+  $ajaxUtils.sendGetRequest(
+    menuItemsTitleHtml,
+    function (menuItemsTitleHtml) {
+      // Retrieve single menu item snippet
+      $ajaxUtils.sendGetRequest(
+        menuItemHtml,
+        function (menuItemHtml) {
+          // Switch CSS class active to menu button
+          switchMenuToActive();
+
+          var menuItemsViewHtml =
+            buildMenuItemsViewHtml(categoryMenuItems,
+                                   menuItemsTitleHtml,
+                                   menuItemHtml);
+          insertHtml("#main-content", menuItemsViewHtml);
+        },
+        false);
+    },
+    false);
+}
 
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
